@@ -1,15 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, Phone, Clock, Mail } from "lucide-react";
 import { SITE } from "@/lib/site";
+import logo from "@/assets/logo-tupiniquim.png";
 
 export function Footer() {
   return (
     <footer className="bg-[var(--gradient-dark)] border-t border-border mt-20">
       <div className="container-x py-16 grid gap-12 md:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-full bg-[var(--gradient-gold)] grid place-items-center text-primary-foreground font-bold">G</div>
-            <span className="font-display text-lg tracking-wide">{SITE.name.toUpperCase()}</span>
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt={`${SITE.name} logo`} className="h-14 w-auto" />
+            <span className="font-display text-lg tracking-[0.18em]">TUPINIQUIM</span>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Chopp artesanal premium em {SITE.city}/{SITE.state}. Entrega rápida, chopeiras
