@@ -34,12 +34,14 @@ export function Header() {
       }`}
     >
       <div className="container-x flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-full bg-[var(--gradient-gold)] grid place-items-center text-primary-foreground font-bold shadow-[var(--shadow-gold)]">
-            G
-          </div>
-          <span className="font-display text-lg md:text-xl tracking-wide">
-            {SITE.name.toUpperCase()}
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src={logo}
+            alt={`${SITE.name} logo`}
+            className="h-11 md:h-14 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105"
+          />
+          <span className="hidden sm:inline font-display text-base md:text-lg tracking-[0.18em]">
+            TUPINIQUIM
           </span>
         </Link>
 
