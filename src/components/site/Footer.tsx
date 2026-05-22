@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, MapPin, Phone, Clock, Mail } from "lucide-react";
 import { SITE } from "@/lib/site";
+import logo from "@/assets/logo-tupiniquim.png";
 
 export function Footer() {
   return (
