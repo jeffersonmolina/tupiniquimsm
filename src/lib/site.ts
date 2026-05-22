@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "Golden Chopp",
+  name: "Tupiniquim Cervejaria",
   tagline: "Chopp Artesanal Premium",
   city: "Santa Maria",
   state: "RS",
