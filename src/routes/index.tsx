@@ -43,8 +43,8 @@ function HomePage() {
             <span className="inline-flex items-center gap-2 text-xs tracking-[0.3em] uppercase text-gold mb-5">
               <span className="w-8 h-px bg-gold" /> Cervejaria artesanal · Santa Maria/RS
             </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display leading-[1.05] mb-6 uppercase">
-              Atendimento em <span className="text-gold-grad">Santa Maria/RS</span> e região central do estado
+            <h1 className="text-4xl md:text-6xl font-display leading-[1.05] mb-6 uppercase font-serif lg:text-7xl">
+              O MELHOR CHOPP DO ESTADO DIRETO NA<br />SUA CASA, BAR OU EVENTO
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 max-w-2xl mb-9 leading-relaxed">
               Entrega rápida, chopeiras profissionais e qualidade premium em cada litro.
