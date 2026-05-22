@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { SITE, wa } from "@/lib/site";
+import logo from "@/assets/logo-tupiniquim.png";
 
 const NAV = [
   { to: "/", label: "Home" },
