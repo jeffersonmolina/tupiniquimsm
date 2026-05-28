@@ -83,7 +83,7 @@
   --secondary: oklch(0.22 0.03 250);
   --secondary-foreground: oklch(0.97 0.01 90);
   --muted: oklch(0.2 0.02 250);
-  --muted-foreground: oklch(0.7 0.02 90);
+  --muted-foreground: oklch(0.78 0.02 90);
   --accent: oklch(0.78 0.14 80);
   --accent-foreground: oklch(0.13 0.015 250);
   --destructive: oklch(0.62 0.22 25);
@@ -123,7 +123,52 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+  }
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  [tabindex]:not([tabindex="-1"]) {
+    outline-offset: 4px;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--primary-foreground);
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-gold);
+  transition: transform 0.2s ease;
+  &:focus {
+    transform: translateY(0);
   }
 }
 

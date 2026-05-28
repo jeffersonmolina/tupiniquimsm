@@ -42,7 +42,7 @@ function Page() {
             Paixão por <span className="text-gold-grad">chopp de verdade</span>
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Há mais de duas década produzindo chopp premium em Porto Alegre/{SITE.state}, com
+            Há mais de duas décadas produzindo chopp premium em Porto Alegre/{SITE.state}, com
             receitas próprias e ingredientes selecionados. Distribuição em {SITE.city}/{SITE.state}
           </p>
         </div>
@@ -52,7 +52,7 @@ function Page() {
         <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
           <img
             src={breweryImg}
-            alt="Fábrica Golden Chopp"
+            alt="Fábrica Tupiniquim"
             loading="lazy"
             width={1600}
             height={1100}
@@ -81,7 +81,7 @@ function Page() {
               },
               { i: Leaf, t: "Ingredientes nobres", d: "Maltes e lúpulos selecionados." },
               { i: Thermometer, t: "Sempre gelado", d: "Logística refrigerada até seu evento." },
-              { i: Award, t: "Tradição", d: "Mais de 27' anos de história artesanal." },
+              { i: Award, t: "Tradição", d: "Mais de 27 anos de história artesanal." },
             ].map((v, i) => (
               <div key={i} className="card-premium p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-[var(--gradient-gold)] grid place-items-center mx-auto mb-4 text-primary-foreground">

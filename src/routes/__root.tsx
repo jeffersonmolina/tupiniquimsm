@@ -84,20 +84,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Golden Chopp — Chopp Artesanal Premium em Santa Maria/RS" },
+      { title: "Tupiniquim — Chopp Artesanal Premium em Santa Maria/RS" },
       {
         name: "description",
         content:
           "Chopp artesanal premium em Santa Maria/RS. Entrega rápida, chopeiras profissionais e qualidade gelada para festas, eventos e revendedores.",
       },
       { name: "theme-color", content: "#0f1422" },
-      { property: "og:title", content: "Golden Chopp — Chopp Artesanal Premium" },
+      { property: "og:title", content: "Tupiniquim — Chopp Artesanal Premium" },
       {
         property: "og:description",
         content: "Entrega rápida, chopeiras profissionais e chopp sempre gelado em Santa Maria/RS.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Golden Chopp" },
+      { property: "og:site_name", content: "Tupiniquim" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -136,8 +136,11 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col">
+        <a href="#conteudo-principal" className="skip-link">
+          Pular para o conteúdo
+        </a>
         <Header />
-        <main className="flex-1 pt-16 md:pt-20">
+        <main id="conteudo-principal" className="flex-1 pt-16 md:pt-20" tabIndex={-1}>
           <Outlet />
         </main>
         <Footer />

@@ -31,16 +31,16 @@ export function Header() {
       }`}
     >
       <div className="container-x flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group" aria-label="Ir para a página inicial">
           <img
             src={logo}
-            alt={`${SITE.name} logo`}
+            alt=""
             className="h-11 md:h-14 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105"
           />
           <span className="hidden sm:inline font-display text-base md:text-lg tracking-[0.18em]"></span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden lg:flex items-center gap-7" aria-label="Navegação principal">
           {NAV.map((n) => (
             <Link
               key={n.to}
@@ -66,38 +66,42 @@ export function Header() {
           </a>
           <button
             className="lg:hidden p-2 text-foreground"
-            aria-label="Abrir menu"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            aria-controls="menu-mobile"
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? <X /> : <Menu />}
+            {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>
         </div>
       </div>
 
-      {open && (
-        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-in">
-          <div className="container-x py-6 flex flex-col gap-4">
-            {NAV.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="text-base text-foreground/90 hover:text-gold py-1"
-              >
-                {n.label}
-              </Link>
-            ))}
-            <a
-              href={wa("Olá! Quero fazer um pedido de chopp.")}
-              target="_blank"
-              rel="noopener"
-              className="btn-gold btn-gold-hover mt-2 justify-center"
+      <div
+        id="menu-mobile"
+        hidden={!open}
+        className="lg:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-in"
+      >
+        <div className="container-x py-6 flex flex-col gap-4">
+          {NAV.map((n) => (
+            <Link
+              key={n.to}
+              to={n.to}
+              onClick={() => setOpen(false)}
+              className="text-base text-foreground/90 hover:text-gold py-1"
             >
-              <MessageCircle className="w-4 h-4" /> Pedir no WhatsApp
-            </a>
-          </div>
+              {n.label}
+            </Link>
+          ))}
+          <a
+            href={wa("Olá! Quero fazer um pedido de chopp.")}
+            target="_blank"
+            rel="noopener"
+            className="btn-gold btn-gold-hover mt-2 justify-center"
+          >
+            <MessageCircle className="w-4 h-4" /> Pedir no WhatsApp
+          </a>
         </div>
-      )}
+      </div>
     </header>
   );
 }

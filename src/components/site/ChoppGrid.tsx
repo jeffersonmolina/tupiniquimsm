@@ -1,9 +1,10 @@
-import { CHOPPS } from "@/lib/choppes";
+import { CHOPPS, type Chopp } from "@/lib/choppes";
 import { wa } from "@/lib/site";
 import { MessageCircle } from "lucide-react";
 
-export function ChoppGrid({ limit }: { limit?: number }) {
-  const list = limit ? CHOPPS.slice(0, limit) : CHOPPS;
+export function ChoppGrid({ limit, products }: { limit?: number; products?: Chopp[] }) {
+  const source = products ?? CHOPPS;
+  const list = limit ? source.slice(0, limit) : source;
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {list.map((c) => (
@@ -54,6 +55,7 @@ export function ChoppGrid({ limit }: { limit?: number }) {
               href={wa(`Olá! Quero pedir o Chopp ${c.name} (${c.volume}) da Tupiniquim.`)}
               target="_blank"
               rel="noopener"
+              aria-label={`Pedir ${c.name}, ${c.volume}, pelo WhatsApp`}
               className="mt-auto btn-ghost-gold text-sm hover:bg-gold hover:text-primary-foreground"
             >
               <MessageCircle className="w-4 h-4" /> Pedir {c.name}

@@ -8,7 +8,7 @@ import eventImg from "@/assets/event.jpg";
 export const Route = createFileRoute("/eventos")({
   head: () => ({
     meta: [
-      { title: "Chopp para Eventos em Santa Maria/RS — Casamentos, Formaturas | Golden Chopp" },
+      { title: "Chopp para Eventos em Santa Maria/RS — Casamentos, Formaturas | Tupiniquim" },
       {
         name: "description",
         content:
@@ -136,7 +136,7 @@ function Calculadora() {
               step={1}
             />
           </div>
-          <div className="mt-8 grid sm:grid-cols-3 gap-4 text-center">
+          <div className="mt-8 grid sm:grid-cols-3 gap-4 text-center" aria-live="polite">
             <Result label="Litros sugeridos" value={`${totalLiters} L`} />
             <Result label="Barris 30L" value={`${barrels30}`} />
             <Result label="Barris 50L" value={`${barrels50}`} />
@@ -179,11 +179,21 @@ function Field({
   max: number;
   step: number;
 }) {
+  const fieldId = label
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  const numberId = `${fieldId}-numero`;
   return (
     <div>
-      <label className="text-xs uppercase tracking-wider text-muted-foreground">{label}</label>
+      <label htmlFor={numberId} className="text-xs uppercase tracking-wider text-muted-foreground">
+        {label}
+      </label>
       <div className="mt-2 flex items-center gap-3">
         <input
+          id={numberId}
           type="number"
           value={value}
           min={min}
@@ -194,6 +204,7 @@ function Field({
         />
         <input
           type="range"
+          aria-label={`Ajustar ${label.toLowerCase()}`}
           min={min}
           max={max}
           step={step}

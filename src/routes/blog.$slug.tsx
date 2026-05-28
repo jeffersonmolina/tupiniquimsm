@@ -11,8 +11,8 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.title ?? "Artigo"} | Golden Chopp` },
-      { name: "description", content: loaderData?.excerpt ?? "Artigo Golden Chopp" },
+      { title: `${loaderData?.title ?? "Artigo"} | Tupiniquim` },
+      { name: "description", content: loaderData?.excerpt ?? "Artigo Tupiniquim" },
       { property: "og:title", content: loaderData?.title ?? "Artigo" },
       { property: "og:description", content: loaderData?.excerpt ?? "" },
       { property: "og:type", content: "article" },
@@ -39,7 +39,7 @@ function Page() {
           <p>
             No mundo do chopp artesanal, pequenos detalhes fazem toda a diferença. Neste guia
             rápido, reunimos as melhores práticas para você aproveitar ao máximo a experiência
-            premium da Golden Chopp.
+            premium da Tupiniquim.
           </p>
           <h2 className="text-2xl font-display text-gold mt-8">Por que isso importa</h2>
           <p>

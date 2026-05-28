@@ -15,6 +15,7 @@ import barril50Img from "@/assets/produtos/Barril 50L.png";
 
 export type Chopp = {
   slug: string;
+  category: "chopp" | "cerveja" | "barril";
   name: string;
   short: string;
   ibu: number;
@@ -32,6 +33,7 @@ export type Chopp = {
 export const CHOPPS: Chopp[] = [
   {
     slug: "pilsen",
+    category: "chopp",
     name: "Pilsen",
     short: "Leve, refrescante e equilibrada.",
     ibu: 18,
@@ -47,6 +49,7 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "helles",
+    category: "chopp",
     name: "Helles",
     short: "Maltada suave com final limpo.",
     ibu: 20,
@@ -62,6 +65,7 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "weiss",
+    category: "chopp",
     name: "Weiss",
     short: "Notas frutadas e alta refrescância.",
     ibu: 14,
@@ -77,6 +81,7 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "red-ale",
+    category: "chopp",
     name: "Red Ale",
     short: "Toque caramelizado e corpo equilibrado.",
     ibu: 28,
@@ -92,6 +97,7 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "ipa",
+    category: "chopp",
     name: "IPA",
     short: "Refrescante e saborosa, aroma cítrico.",
     ibu: 55,
@@ -107,6 +113,7 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "bock",
+    category: "chopp",
     name: "Bock",
     short: "Mais intensa, encorpada e puro malte.",
     ibu: 25,
@@ -122,6 +129,7 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "lager",
+    category: "chopp",
     name: "Lager",
     short: "Leve, refrescante e drinkability elevada.",
     ibu: 16,
@@ -138,6 +146,7 @@ export const CHOPPS: Chopp[] = [
 
   {
     slug: "ipa600",
+    category: "cerveja",
     name: "IPA",
     short: "Refrescante e saborosa, aroma cítrico.",
     ibu: 45,
@@ -153,14 +162,15 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "doubleipa",
+    category: "cerveja",
     name: "Double IPA",
-    short: "Refrescante e saborosa, aroma cítrico.",
-    ibu: 55,
-    abv: "5,7%",
+    short: "Forte e amarga, alto teor alcoólico.",
+    ibu: 80,
+    abv: "7,5%",
     color: "Dourado claro",
     intensity: "Intenso",
-    pairing: "Carnes vermelhas e pizzas",
-    profile: "Lúpulos cítricos e tropicais, amargor firme e aromático.",
+    pairing: "Comidas apimentadas, queijos e presunto",
+    profile: "Clara com espuma persistente, aroma acentuado de lúpulos.",
     hue: "oklch(0.72 0.16 65)",
     image: doubleipa600Img,
     volume: "600ml",
@@ -168,14 +178,15 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "helles600",
+    category: "cerveja",
     name: "Helles",
-    short: "Refrescante e saborosa, aroma cítrico.",
-    ibu: 55,
-    abv: "5,7%",
-    color: "Âmbar dourado",
-    intensity: "Médio",
-    pairing: "Comida apimentada, queijos fortes",
-    profile: "Lúpulos cítricos e tropicais, amargor firme e aromático.",
+    short: "Baixo amargor e espuma cremosa",
+    ibu: 14,
+    abv: "5,2%",
+    color: "Dourado claro",
+    intensity: "Leve",
+    pairing: "Grelhados, frutos do mar e queijos",
+    profile: "Notas suaves de cereais e toques levemente adocicados de malte",
     hue: "oklch(0.72 0.16 65)",
     image: helles600Img,
     volume: "600ml",
@@ -183,14 +194,15 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "weiss600",
+    category: "cerveja",
     name: "Weiss",
     short: "Refrescante e saborosa, aroma cítrico.",
-    ibu: 55,
-    abv: "5,7%",
-    color: "Âmbar dourado",
+    ibu: 11,
+    abv: "5,3%",
+    color: "Âmbar claro",
     intensity: "Leve",
-    pairing: "Comida apimentada, queijos fortes",
-    profile: "Lúpulos cítricos e tropicais, amargor firme e aromático.",
+    pairing: "Saladas, frutos do mar e queijos brancos",
+    profile: "Aroma delicado, que traz notas de trigo e de malte tostado",
     hue: "oklch(0.72 0.16 65)",
     image: weiss600Img,
     volume: "600ml",
@@ -198,14 +210,15 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "redale600",
+    category: "cerveja",
     name: "Red Ale",
-    short: "Refrescante e saborosa, aroma cítrico.",
+    short: "Baixo amargor e notas frutadas.",
     ibu: 15,
     abv: "4,5%",
-    color: "Âmbar dourado",
+    color: "Vermelho âmbar",
     intensity: "Médio",
-    pairing: "Comida apimentada, queijos fortes",
-    profile: "Lúpulos cítricos e tropicais, amargor firme e aromático.",
+    pairing: "Queijos, ervas frescas e frutos do mar",
+    profile: "Aroma com notas de frutas vermelhas e corpo forma espuma densa e volumosa.",
     hue: "oklch(0.72 0.16 65)",
     image: redale600Img,
     volume: "600ml",
@@ -213,6 +226,7 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "barril30",
+    category: "barril",
     name: "Barril 30L",
     short: "Leve, refrescante e equilibrada.",
     ibu: 18,
@@ -228,6 +242,7 @@ export const CHOPPS: Chopp[] = [
   },
   {
     slug: "barril50",
+    category: "barril",
     name: "Barril 50L",
     short: "Leve, refrescante e equilibrada.",
     ibu: 18,

@@ -63,7 +63,7 @@ function HomePage() {
             <span className="inline-flex items-center gap-2 text-xs tracking-[0.3em] uppercase text-gold mb-5">
               <span className="w-8 h-px bg-gold" /> Cervejaria Tupiniquim · Santa Maria/RS
             </span>
-            <h1 className="text-4xl md:text-6xl font-display leading-tight mt-3 mb-6 uppercase lg:text-7xl">
+            <h1 className="text-4xl md:text-6xl font-sans font-black leading-tight mt-3 mb-6 uppercase lg:text-7xl">
               O MELHOR<span className="text-gold-grad"> CHOPP DO ESTADO</span> NA SUA CASA, BAR OU
               EVENTO.
             </h1>
@@ -130,7 +130,7 @@ function HomePage() {
           <div className="relative">
             <img
               src={breweryImg}
-              alt="Cervejaria artesanal Golden Chopp"
+              alt="Cervejaria artesanal Tupiniquim"
               loading="lazy"
               width={1600}
               height={1100}
@@ -191,7 +191,7 @@ function HomePage() {
             title="+10 estilos para |cada momento|"
             subtitle="Receitas autorais com maltes nobres e lúpulos selecionados. Escolha o seu e peça pelo WhatsApp."
           />
-          <ChoppGrid />
+          <ChoppGrid limit={3} />
           <div className="text-center mt-12">
             <Link to="/choppes" className="btn-gold btn-gold-hover">
               Ver catálogo completo <ArrowRight className="w-4 h-4" />

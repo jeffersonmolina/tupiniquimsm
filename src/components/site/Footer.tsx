@@ -48,11 +48,6 @@ export function Footer() {
                 Revendedores
               </Link>
             </li>
-            <li>
-              <Link to="/blog" className="hover:text-gold">
-                Blog
-              </Link>
-            </li>
           </ul>
         </div>
 

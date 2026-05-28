@@ -46,7 +46,7 @@ function Page() {
               <Clock className="w-5 h-5 text-gold" /> {SITE.hours}
             </li>
             <li className="flex gap-3">
-              <Instagram className="w-5 h-5 text-gold" /> @tupiniquim
+              <Instagram className="w-5 h-5 text-gold" /> @hypebeersm
             </li>
           </ul>
           <a
@@ -61,7 +61,7 @@ function Page() {
         <div className="card-premium overflow-hidden">
           <iframe
             title="Mapa Tupiniquim"
-            src="https://www.google.com/maps?q=Santa+Maria+RS&output=embed"
+            src="https://www.google.com/maps?q=Rua+Silva+Jardim,+1032,+Santa+Maria,+RS&output=embed"
             className="w-full h-full min-h-[420px]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

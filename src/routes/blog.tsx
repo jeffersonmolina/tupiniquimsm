@@ -47,13 +47,13 @@ export const POSTS = [
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog do Chopp — Dicas, guias e harmonização | Golden Chopp" },
+      { title: "Blog do Chopp — Dicas, guias e harmonização | Tupiniquim" },
       {
         name: "description",
         content:
           "Guias práticos sobre chopp artesanal: como escolher, quantos litros comprar, harmonização e cuidados com a chopeira.",
       },
-      { property: "og:title", content: "Blog Golden Chopp" },
+      { property: "og:title", content: "Blog Tupiniquim" },
       { property: "og:description", content: "Tudo sobre chopp artesanal em um só lugar." },
       { property: "og:url", content: "/blog" },
     ],

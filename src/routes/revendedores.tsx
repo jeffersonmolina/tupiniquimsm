@@ -104,6 +104,7 @@ function FormRevenda() {
     <form onSubmit={send} className="card-premium p-7 space-y-4">
       <h3 className="text-xl font-display">Quero ser revendedor</h3>
       <Input
+        id="revenda-nome"
         label="Nome"
         value={f.nome}
         onChange={(v) => setF({ ...f, nome: v })}
@@ -111,6 +112,7 @@ function FormRevenda() {
         maxLength={80}
       />
       <Input
+        id="revenda-cidade"
         label="Cidade"
         value={f.cidade}
         onChange={(v) => setF({ ...f, cidade: v })}
@@ -118,6 +120,7 @@ function FormRevenda() {
         maxLength={60}
       />
       <Input
+        id="revenda-telefone"
         label="Telefone / WhatsApp"
         value={f.telefone}
         onChange={(v) => setF({ ...f, telefone: v })}
@@ -125,13 +128,17 @@ function FormRevenda() {
         maxLength={20}
       />
       <div>
-        <label className="text-xs uppercase tracking-wider text-muted-foreground">
+        <label
+          htmlFor="revenda-tipo"
+          className="text-xs uppercase tracking-wider text-muted-foreground"
+        >
           Tipo de negócio
         </label>
         <select
+          id="revenda-tipo"
           value={f.tipo}
           onChange={(e) => setF({ ...f, tipo: e.target.value })}
-          className="mt-1 w-full bg-secondary/60 border border-border rounded-lg px-3 py-2.5"
+          className="mt-1 w-full bg-secondary/60 border border-border rounded-lg px-3 py-2.5 text-foreground"
         >
           {["Bar / Pub", "Restaurante", "Distribuidora", "Eventos", "Outro"].map((t) => (
             <option key={t}>{t}</option>
@@ -146,12 +153,14 @@ function FormRevenda() {
 }
 
 function Input({
+  id,
   label,
   value,
   onChange,
   required,
   maxLength,
 }: {
+  id: string;
   label: string;
   value: string;
   onChange: (v: string) => void;
@@ -160,13 +169,16 @@ function Input({
 }) {
   return (
     <div>
-      <label className="text-xs uppercase tracking-wider text-muted-foreground">{label}</label>
+      <label htmlFor={id} className="text-xs uppercase tracking-wider text-muted-foreground">
+        {label}
+      </label>
       <input
+        id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required={required}
         maxLength={maxLength}
-        className="mt-1 w-full bg-secondary/60 border border-border rounded-lg px-3 py-2.5 text-foreground focus:outline-none focus:ring-2 focus:ring-gold/60"
+        className="mt-1 w-full bg-secondary/60 border border-border rounded-lg px-3 py-2.5 text-foreground focus:ring-2 focus:ring-gold/60"
       />
     </div>
   );
