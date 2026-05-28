@@ -24,7 +24,9 @@ function NotFoundComponent() {
           O conteúdo que você procura não existe ou foi movido.
         </p>
         <div className="mt-6">
-          <Link to="/" className="btn-gold btn-gold-hover">Voltar ao início</Link>
+          <Link to="/" className="btn-gold btn-gold-hover">
+            Voltar ao início
+          </Link>
         </div>
       </div>
     </div>
@@ -41,12 +43,17 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <p className="mt-2 text-sm text-muted-foreground">Tente novamente em instantes.</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="btn-gold btn-gold-hover"
           >
             Tentar de novo
           </button>
-          <a href="/" className="btn-ghost-gold">Início</a>
+          <a href="/" className="btn-ghost-gold">
+            Início
+          </a>
         </div>
       </div>
     </div>
@@ -78,10 +85,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Golden Chopp — Chopp Artesanal Premium em Santa Maria/RS" },
-      { name: "description", content: "Chopp artesanal premium em Santa Maria/RS. Entrega rápida, chopeiras profissionais e qualidade gelada para festas, eventos e revendedores." },
+      {
+        name: "description",
+        content:
+          "Chopp artesanal premium em Santa Maria/RS. Entrega rápida, chopeiras profissionais e qualidade gelada para festas, eventos e revendedores.",
+      },
       { name: "theme-color", content: "#0f1422" },
       { property: "og:title", content: "Golden Chopp — Chopp Artesanal Premium" },
-      { property: "og:description", content: "Entrega rápida, chopeiras profissionais e chopp sempre gelado em Santa Maria/RS." },
+      {
+        property: "og:description",
+        content: "Entrega rápida, chopeiras profissionais e chopp sempre gelado em Santa Maria/RS.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Golden Chopp" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -90,11 +104,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap",
+      },
     ],
-    scripts: [
-      { type: "application/ld+json", children: JSON.stringify(jsonLd) },
-    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
   shellComponent: RootShell,
   component: RootComponent,

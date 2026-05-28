@@ -5,10 +5,17 @@ import { ChoppGrid } from "@/components/site/ChoppGrid";
 export const Route = createFileRoute("/choppes")({
   head: () => ({
     meta: [
-      { title: "Nossos Chopps — 7 estilos artesanais premium | Golden Chopp" },
-      { name: "description", content: "Conheça os 7 estilos de chopp artesanal Golden Chopp: Pilsen, Helles, Weiss, Red Ale, IPA, Bock e Lager. Peça pelo WhatsApp." },
+      { title: "Nossos Chopps — +10 estilos artesanais premium | Cervejaria Tupiniquim" },
+      {
+        name: "description",
+        content:
+          "Conheça os estilos de chopp: Pilsen, Helles, Weiss, Red Ale, IPA, Bock e Lager. Peça pelo WhatsApp.",
+      },
       { property: "og:title", content: "Catálogo de Chopps Artesanais" },
-      { property: "og:description", content: "7 estilos premium com IBU, ABV, harmonização e perfil sensorial." },
+      {
+        property: "og:description",
+        content: "estilos premium com IBU, ABV, harmonização e perfil sensorial.",
+      },
       { property: "og:url", content: "/choppes" },
     ],
     links: [{ rel: "canonical", href: "/choppes" }],
@@ -23,7 +30,7 @@ function Page() {
         <SectionTitle
           eyebrow="Catálogo"
           title="Nossos |Chopps Artesanais|"
-          subtitle="7 estilos cuidadosamente desenvolvidos para harmonizar com qualquer momento."
+          subtitle="+10 estilos cuidadosamente desenvolvidos para harmonizar com qualquer momento."
         />
         <ChoppGrid />
       </div>

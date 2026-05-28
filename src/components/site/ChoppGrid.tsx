@@ -43,8 +43,12 @@ export function ChoppGrid({ limit }: { limit?: number }) {
               <Stat label="Volume" value={c.volume.replace("Barrilete ", "")} />
             </dl>
             <div className="space-y-2 text-xs text-muted-foreground mb-6">
-              <p><span className="text-gold/90 font-medium">Perfil:</span> {c.profile}</p>
-              <p><span className="text-gold/90 font-medium">Harmonização:</span> {c.pairing}</p>
+              <p>
+                <span className="text-gold/90 font-medium">Perfil:</span> {c.profile}
+              </p>
+              <p>
+                <span className="text-gold/90 font-medium">Harmonização:</span> {c.pairing}
+              </p>
             </div>
             <a
               href={wa(`Olá! Quero pedir o Chopp ${c.name} (${c.volume}) da Tupiniquim.`)}

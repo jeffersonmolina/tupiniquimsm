@@ -19,10 +19,12 @@ export function SectionTitle({
       <h2 className="text-3xl md:text-5xl font-display leading-tight">
         {title.split("|").map((p, i) =>
           i % 2 === 1 ? (
-            <span key={i} className="text-gold-grad">{p}</span>
+            <span key={i} className="text-gold-grad">
+              {p}
+            </span>
           ) : (
             <span key={i}>{p}</span>
-          )
+          ),
         )}
       </h2>
       {subtitle && (

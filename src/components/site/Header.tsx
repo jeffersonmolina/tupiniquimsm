@@ -7,10 +7,9 @@ import logo from "@/assets/logo-tupiniquim.png";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/sobre", label: "Sobre" },
-  { to: "/choppes", label: "Nossos Chopps" },
+  { to: "/choppes", label: "Produtos" },
   { to: "/eventos", label: "Eventos" },
   { to: "/revendedores", label: "Revendedores" },
-  { to: "/blog", label: "Blog" },
   { to: "/contato", label: "Contato" },
 ] as const;
 
@@ -28,9 +27,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-xl bg-background/80 border-b border-border/60"
-          : "bg-transparent"
+        scrolled ? "backdrop-blur-xl bg-background/80 border-b border-border/60" : "bg-transparent"
       }`}
     >
       <div className="container-x flex items-center justify-between h-16 md:h-20">
@@ -40,9 +37,7 @@ export function Header() {
             alt={`${SITE.name} logo`}
             className="h-11 md:h-14 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-transform group-hover:scale-105"
           />
-          <span className="hidden sm:inline font-display text-base md:text-lg tracking-[0.18em]">
-            TUPINIQUIM
-          </span>
+          <span className="hidden sm:inline font-display text-base md:text-lg tracking-[0.18em]"></span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7">

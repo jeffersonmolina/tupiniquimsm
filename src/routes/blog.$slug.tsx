@@ -20,7 +20,9 @@ export const Route = createFileRoute("/blog/$slug")({
     links: loaderData ? [{ rel: "canonical", href: `/blog/${loaderData.slug}` }] : [],
   }),
   component: Page,
-  notFoundComponent: () => <div className="container-x py-32 text-center">Artigo não encontrado.</div>,
+  notFoundComponent: () => (
+    <div className="container-x py-32 text-center">Artigo não encontrado.</div>
+  ),
 });
 
 function Page() {
@@ -28,7 +30,9 @@ function Page() {
   return (
     <article className="section-pad">
       <div className="container-x max-w-3xl">
-        <Link to="/blog" className="text-sm text-gold">← Blog</Link>
+        <Link to="/blog" className="text-sm text-gold">
+          ← Blog
+        </Link>
         <h1 className="text-4xl md:text-5xl font-display mt-4 mb-4">{post.title}</h1>
         <p className="text-muted-foreground text-lg mb-10">{post.excerpt}</p>
         <div className="prose prose-invert max-w-none text-foreground/85 space-y-5 leading-relaxed">
@@ -40,19 +44,24 @@ function Page() {
           <h2 className="text-2xl font-display text-gold mt-8">Por que isso importa</h2>
           <p>
             O chopp é um produto vivo. Temperatura, pressão e tempo entre o envase e o consumo
-            influenciam diretamente no sabor, aroma e cremosidade da espuma. Por isso, contamos
-            com logística refrigerada e chopeiras profissionais em todas as entregas.
+            influenciam diretamente no sabor, aroma e cremosidade da espuma. Por isso, contamos com
+            logística refrigerada e chopeiras profissionais em todas as entregas.
           </p>
           <h2 className="text-2xl font-display text-gold mt-8">Nossa recomendação</h2>
           <p>
             Se a dúvida persistir, fale com nosso time. Atendemos rapidamente pelo WhatsApp e
-            ajudamos você a escolher o melhor para o seu momento — seja uma festa em casa, um
-            grande evento ou o reabastecimento do seu ponto de revenda.
+            ajudamos você a escolher o melhor para o seu momento — seja uma festa em casa, um grande
+            evento ou o reabastecimento do seu ponto de revenda.
           </p>
         </div>
         <div className="mt-12 card-premium p-6 text-center">
           <p className="mb-4 text-muted-foreground">Pronto para experimentar?</p>
-          <a href={wa("Olá! Vim do blog e quero pedir um chopp.")} target="_blank" rel="noopener" className="btn-gold btn-gold-hover">
+          <a
+            href={wa("Olá! Vim do blog e quero pedir um chopp.")}
+            target="_blank"
+            rel="noopener"
+            className="btn-gold btn-gold-hover"
+          >
             <MessageCircle className="w-5 h-5" /> Pedir no WhatsApp
           </a>
         </div>
